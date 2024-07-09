@@ -3,15 +3,13 @@ package br.com.alura.screenmatch.model;
 public enum Categoria {
     ACAO("Action"),
     ROMANCE("Romance"),
-    CRIME("Crime"),
     COMEDIA("Comedy"),
     DRAMA("Drama"),
-    FANTASIA("Fantasy"),
-    FICCAO("Fiction");
+    CRIME("Crime");
 
-    private String categoriaOmdb;
+    private final String categoriaOmdb;
 
-    Categoria(String categoriaOmdb){
+    Categoria(String categoriaOmdb) {
         this.categoriaOmdb = categoriaOmdb;
     }
 
@@ -24,5 +22,8 @@ public enum Categoria {
         throw new IllegalArgumentException("Nenhuma categoria encontrada para a string fornecida: " + text);
     }
 
+    @Override
+    public String toString() {
+        return categoriaOmdb;
+    }
 }
-
